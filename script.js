@@ -50,6 +50,11 @@ function displayLightTheme() {
   btnNext.src = './assets/seta-direita-preta.svg';
 
   body.style.setProperty('--background-color', "#FFF");
+  body.style.setProperty('--color', "#000");
+  body.style.setProperty('--input-background-color', "#979797");
+  body.style.setProperty('--highlight-background', "#FFF");
+  body.style.setProperty('--highlight-color', "rgba(0, 0, 0, 0.7)");
+  body.style.setProperty('--highlight-description', "#000");
 }
 
 function toggleTheme() {
