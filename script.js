@@ -48,7 +48,7 @@ function displayLightTheme() {
   btnTheme.src = './assets/light-mode.svg';
   btnPrev.src = './assets/seta-esquerda-preta.svg';
   btnNext.src = './assets/seta-direita-preta.svg';
-  
+
   body.style.setProperty('--background-color', "#FFF");
   body.style.setProperty('--color', "#000");
   body.style.setProperty('--input-background-color', "#979797");
@@ -136,11 +136,11 @@ function displayMovies() {
 
     const movieInfo = document.createElement('div');
     movieInfo.classList.add('movie__info');
-    
+
     const movieTitle = document.createElement('span');
     movieTitle.classList.add('movie__title');
     movieTitle.textContent = movie.title;
-    
+
     const movieRating = document.createElement('span');
     movieRating.classList.add('movie__rating');
 
@@ -184,10 +184,10 @@ function loadMovies() {
 
 function loadHighlightMovie() {
   const basePromise = fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/movie/436969?language=pt-BR');
-  
+
   basePromise.then(function (response) {
     const bodyPromise = response.json();
-    
+
     bodyPromise.then(function (body) {
       highlightVideo.style.background = `linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.6) 100%), url('${body.backdrop_path}') no-repeat center / cover`;
       highlightTitle.textContent = body.title;
@@ -199,12 +199,12 @@ function loadHighlightMovie() {
       highlightDescription.textContent = body.overview;
     })
   });
-  
+
   const linkPromise = fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/movie/436969/videos?language=pt-BR');
-  
+
   linkPromise.then(function (response) {
     const bodyPromise = response.json();
-    
+
     bodyPromise.then(function (body) {
       highlightVideoLink.href = `https://www.youtube.com/watch?v=${body.results[0].key}`;
     })
